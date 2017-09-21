@@ -55,13 +55,7 @@ function scoreState () {
 	loadLetter();
 }
 
-//hide letter function
-function hideAnswer() {
-	var result
-	if (userInput === false) {
 
-	}
-}
 
 
 // STARTUP CODE / Main Logic  / 
