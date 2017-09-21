@@ -1,59 +1,71 @@
 
-var bands = [
-"afi",  
-"nofx",
-"bigwig"]
+var letters = [
+'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+        'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
+        't', 'u', 'v', 'w', 'x', 'y', 'z']
 
-var hiddenWord = ""
+var hiddenLetter = ""
 var guessCounter 
-var scoreCounter
 var userGuess 
 var userString = [];
+var userInput = document.getElementById("user-text");
+var scoreCounter = document.getElementById("score-count");
+var points = 0
+var userKey = ""
 
 // FUNCTIONS
+
+
 //load word from array into hidden-band id
-function bandGuess() {
+function loadLetter() {
 	
-	hiddenWord = bands[Math.floor(Math.random() * bands.length)];
-	document.getElementById("hidden-band").textContent = hiddenWord
-	console.log(hiddenWord)
-	console.log(hiddenWord.length)
+	hiddenLetter = letters[Math.floor(Math.random() * letters.length)];
+	document.getElementById("hidden-letter").textContent = hiddenLetter
+	console.log(hiddenLetter)
+	console.log(hiddenLetter.length)
 };
 
 
 // match letter count, 
 function matchCase() {
-	for (var i = 0; i < hiddenWord.length; i++) {
+	for (var i = 0; i < hiddenLetter.length; i++) {
 		document.getElementById("user-text").innerHTML += "_ " 
 	}
 };
 
-//replace html with user string
-// function findLetter(currentWord){
-// 	for (var j = 0; j < currentWord.length; j++) {
-// 		currentWord[j]
-// 	}
-
-// 	}
-// }
-//possible functions to use .toLowerCase()
+function scoreState () {
 	
+	if (userKey === hiddenLetter ) {
+		points++
+		scoreCounter.textContent = points
+		console.log("  score is " + points)
+	}
+	else {
+		points--
+		scoreCounter.textContent = points
+		console.log("  score is " + points)
+	}
+	loadLetter();
+}
+
+
+
 // STARTUP CODE / Main Logic  / 
-bandGuess();
-matchCase();
 
-/* This docuement receives input. 
- Open Console to see */
-
+// This docuement receives input. Open Console to see */
 document.onkeyup = function(event) {
-     var userInput = event.key;
+     
+     userInput.textContent = event.key;
+     userKey = event.key
 
-     userString.push(userInput)
-     console.log("User guess " + userInput);
-     console.log("-----------");
-
+     console.log(event.key);
+     // console.log("-----------");
+scoreState();
 
  }
+loadLetter();
+matchCase();
+
 
  //innerHTML 
  
