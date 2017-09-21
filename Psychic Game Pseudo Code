@@ -1,0 +1,12 @@
+Psychic Game Pseudo Code
+1. Array of bands
+	1.1 Loaded into DOM
+2. User.key inputs
+	2.1 Assigned to DOM
+3. Number of Guesses
+	3.1 Loaded into DOM
+4. Matching strings
+	4.0.1 - USER INPUT AGAINST ARRAY WORD
+5. Guess counter
+
+Take arrayItem [x.length] and 
