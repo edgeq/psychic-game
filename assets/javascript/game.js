@@ -10,7 +10,9 @@ var userGuess
 var userString = [];
 var userInput = document.getElementById("user-text");
 var scoreCounter = document.getElementById("score-count");
+var lossCounter = document.getElementById("loss-count");
 var points = 0
+var losses = 0
 var userKey = ""
 
 // FUNCTIONS
@@ -41,9 +43,9 @@ function scoreState () {
 		console.log("  score is " + points)
 	}
 	else {
-		points--
-		scoreCounter.textContent = points
-		console.log("  score is " + points)
+		losses++
+		lossCounter.textContent = losses
+		console.log("  you lost " + losses + " times")
 	}
 	loadLetter();
 }
