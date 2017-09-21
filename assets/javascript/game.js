@@ -22,7 +22,7 @@ var userKey = ""
 function loadLetter() {
 	
 	hiddenLetter = letters[Math.floor(Math.random() * letters.length)];
-	document.getElementById("hidden-letter").textContent = hiddenLetter
+	// document.getElementById("hidden-letter").textContent = hiddenLetter
 	console.log(hiddenLetter)
 	console.log(hiddenLetter.length)
 };
@@ -38,6 +38,11 @@ function matchCase() {
 function scoreState () {
 	
 	if (userKey === hiddenLetter ) {
+	
+		document.getElementById("hidden-letter").textContent = hiddenLetter
+		// document.getElementById("user-text").innerHTML = "_ " 
+		// document.getElementById("hidden-letter").innerHTML = "_ " 
+
 		points++
 		scoreCounter.textContent = points
 		console.log("  score is " + points)
@@ -50,6 +55,13 @@ function scoreState () {
 	loadLetter();
 }
 
+//hide letter function
+function hideAnswer() {
+	var result
+	if (userInput === false) {
+
+	}
+}
 
 
 // STARTUP CODE / Main Logic  / 
