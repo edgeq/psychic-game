@@ -23,8 +23,8 @@ function loadLetter() {
 	
 	hiddenLetter = letters[Math.floor(Math.random() * letters.length)];
 	// document.getElementById("hidden-letter").textContent = hiddenLetter
-	console.log(hiddenLetter)
-	console.log(hiddenLetter.length)
+	console.log("hidden letter is " + hiddenLetter)
+	// console.log(hiddenLetter.length)
 };
 
 
